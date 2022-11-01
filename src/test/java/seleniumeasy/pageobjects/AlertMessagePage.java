@@ -5,6 +5,8 @@ import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
+
 @DefaultUrl("https://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html")
 public class AlertMessagePage extends UIInteractionSteps {
 
@@ -19,8 +21,11 @@ public class AlertMessagePage extends UIInteractionSteps {
     }
 
     public void waitForMessageToDissappear() {
+        //Los tiempos de espera también se pueden poner con 'withTimeoutOf()'
+        withTimeoutOf(Duration.ofSeconds(10)).waitForElementsToDisappear(ALERT_SUCCESS_MESSAGE);
+
         //Las esperas se utilizan con 'fluentwait' en la configuración para dar más tiempo, lo predeterminado son 5 segundos
-        waitForRenderedElementsToDisappear(ALERT_SUCCESS_MESSAGE);
+        //waitForRenderedElementsToDisappear(ALERT_SUCCESS_MESSAGE);
     }
 
     public WebElementState alertSuccessMessage() {

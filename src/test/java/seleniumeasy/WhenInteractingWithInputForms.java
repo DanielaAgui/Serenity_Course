@@ -52,4 +52,13 @@ public class WhenInteractingWithInputForms {
         //Verificamos que la suma sea correcta
         assertThat(twoInputFieldForm.displayedTotal()).isEqualTo("5");
     }
+
+    @Test
+    public void basicFormsWithMultipleFields2() {
+        navigate.toTheTwoInputFieldForm();
+        twoInputFieldForm.enterA("2");
+        twoInputFieldForm.enterB("3");
+        twoInputFieldForm.getTotal();
+        assertThat(twoInputFieldForm.displayedTotal()).isEqualTo("5");
+    }
 }

@@ -15,7 +15,7 @@ public abstract class SeleniumEasyForm extends PageObject {
     //Anotación para indicar que el método se ejcuta cuando se abre la página
     @WhenPageOpens
     public void clearPopupWindow() {
-        //Si el ícono está presente
+        //Si el ícono del pop-up está presente
         if ($(POPUP_WINDOW_CLOSE_ICON).isPresent()) {
             //Entonces espera hasta que esté visible y le da clic
             waitFor(visibilityOfElementLocated(POPUP_WINDOW_CLOSE_ICON)).click();

@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import seleniumeasy.pageobjects.AlertMessagePage;
+import seleniumeasy.pageobjects.DynamicDataPage;
 import seleniumeasy.pageobjects.ModalDialogPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -49,5 +50,19 @@ public class WhenWaitingForElements {
         alertMessagePage.waitForMessageToDissappear();
         //Verificamos que el elemento no esté visible
         alertMessagePage.alertSuccessMessage().shouldNotBeVisible();
+    }
+
+    DynamicDataPage dynamicDataPage;
+
+    @Test
+    public void waitingForElementsToAppear() {
+        //Abrimos la URL
+        dynamicDataPage.open();
+        //Damos clic en el botón
+        dynamicDataPage.getNewUser();
+        //Verificamos que aparezcan los textos
+        assertThat(dynamicDataPage.userDescription())
+                .contains("First Name")
+                .contains("Last Name");
     }
 }
