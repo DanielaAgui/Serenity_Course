@@ -15,7 +15,7 @@ public class ProductList extends PageObject {
     //Método que devuelve los nombres de los productos en una lista
     public List<String> titles() {
         //Retornamos los elementos encontrados
-        //Con 'textContents()' leemos los valores obtenidos en la lista
+        //Con 'textContents()' o 'texts()' leemos los valores obtenidos en la lista
         return findAll(By.className("inventory_item_name")).textContents();
     }
 
