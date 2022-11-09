@@ -15,7 +15,7 @@ public class CartPageObject extends PageObject {
     //Anotación para localizar un elemento web
     @FindBy(id = "checkout")
     //Se tienen que crear la variable como objeto WebElementFacade
-            WebElementFacade checkoutButton;
+    WebElementFacade checkoutButton;
 
     @FindBy(css = ".title")
     WebElementFacade title;
