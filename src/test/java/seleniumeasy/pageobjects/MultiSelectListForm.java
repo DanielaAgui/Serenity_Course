@@ -1,8 +1,11 @@
 package seleniumeasy.pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MultiSelectListForm extends SeleniumEasyForm{
 
